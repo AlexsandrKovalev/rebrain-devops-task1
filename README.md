@@ -14,9 +14,9 @@
 2. Install Nginx
 3. Example nginx.conf file configuration
 
-<details><summary>**Information about Nginx**</summary>
-<p>
-<details><summary>**What is nginx?**</summary>
+# Information about Nginx
+
+<details><summary>What is nginx?</summary>
 <p>
 
 Nginx - is a free web and mail proxy server with non-threaded (asynchronous) architecture and open source.
@@ -24,7 +24,7 @@ Nginx - is a free web and mail proxy server with non-threaded (asynchronous) arc
 
 </p>
 </details>
-<details><summary>**Supported NGINX functionality**</summary>
+<details><summary>Supported NGINX functionality</summary>
 <p>
 
 * *HTTP server*
@@ -33,7 +33,7 @@ Nginx - is a free web and mail proxy server with non-threaded (asynchronous) arc
 * *TCP / UDP proxy*
 </p>
 </details>
-<details><summary>**How work nginx?**</summary>
+<details><summary>How work nginx?</summary>
 <p>
 
 Unlike a regular web server, Nginx does not create one thread for each request, but splits it into smaller 
@@ -42,12 +42,11 @@ workflow, and after execution they are merged into a single block that returns t
 processing process. One working connection can process up to 1024 requests of the same type at the same time.
 </p>
 </details>
-</p>
-</details>
 
-<details><summary>**Nginx configuration items and architecture**</summary>
-<p>
-<details><summary>**Important configuration items**</summary>
+
+# Nginx configuration items and architecture
+
+<details><summary>Important configuration items</summary>
 <p>
 
 **Nginx** consists of modules that are configured with directives specified in the configuration file. 
@@ -83,8 +82,6 @@ The asynchronous algorithm solved the problems listed above. With an asynchronou
 <h4 align="center">
   <img alt="NGINX_work" src="how_work_nginx_2.png">
 </h4>
-</p>
-</details>
 </p>
 </details>
 
