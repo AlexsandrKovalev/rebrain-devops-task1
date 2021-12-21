@@ -60,10 +60,12 @@ _ gzip_types is a list of response types to which compression is applied.
 nginx для каждой операционной системы устанавливается по разному.
 
 ## Установка на Linux
-Для установки nginx на Linux могут быть использованы пакеты с nginx.org. This document will cover installation on Linux
+To install nginx on Linux, packages from nginx.org can be used. This document will cover installation on Linux
 
 ###### installation process:
-Official Red Hat/CentOS packages
+
+###### Official Red Hat/CentOS packages
+
 1)To add NGINX yum repository, create a file named /etc/yum.repos.d/nginx.repo and paste one of the configurations below:
   CentOS:
 	[nginx]
@@ -80,8 +82,25 @@ Official Red Hat/CentOS packages
 	
 > **WARNING!** Due to differences between how CentOS, RHEL, and Scientific Linux populate the $releasever variable, it is necessary to manually replace $releasever with either 5 (for 5.x) or 6 (for 6.x), depending upon your OS version.
 
+###### Official Debian/Ubuntu packages
+
+Ubuntu:
+
+The available NGINX Ubuntu release support is listed at this distribution page. For a mapping of Ubuntu versions to release names, please visit the Official Ubuntu Releases page.
+
+Append the appropriate stanza to /etc/apt/sources.list. If there is concern about persistence of repository additions (i.e. DigitalOcean Droplets), the appropriate stanza may instead be added to a different list file under /etc/apt/sources.list.d/, such as /etc/apt/sources.list.d/nginx.list.
+
+	Replace $release with your corresponding Ubuntu release.
+	deb https://nginx.org/packages/ubuntu/ $release nginx
+	deb-src https://nginx.org/packages/ubuntu/ $release nginx
+
 ###### Установка на FreeBSD
 На FreeBSD можно установить nginx либо из пакетов, либо с помощью системы портов. Система портов даёт большую гибкость, позволяя выбирать из широкого набора настроек. Порт скомпилирует nginx с выбранными опциями и установит.
 
 ###### Сборка из исходных файлов
 Если необходима специфическая функциональность, недоступная из пакетов или портов, можно скомпилировать nginx из исходного кода. Будучи наиболее гибким, этот подход может быть сложным для начинающего. Сборка nginx из исходных файлов освещает этот вопрос более подробно.
+
+3. Example nginx.conf file configuration
+
+Example nginx.conf file configuration you can see in [file](./nginx.conf)
+
