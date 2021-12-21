@@ -90,7 +90,7 @@ The available NGINX Ubuntu release support is listed at this distribution page. 
 
 Append the appropriate stanza to /etc/apt/sources.list. If there is concern about persistence of repository additions (i.e. DigitalOcean Droplets), the appropriate stanza may instead be added to a different list file under /etc/apt/sources.list.d/, such as /etc/apt/sources.list.d/nginx.list.
 
-	Replace $release with your corresponding Ubuntu release.
+	\###Replace $release with your corresponding Ubuntu release.\###
 	deb https://nginx.org/packages/ubuntu/ $release nginx
 	deb-src https://nginx.org/packages/ubuntu/ $release nginx
 
