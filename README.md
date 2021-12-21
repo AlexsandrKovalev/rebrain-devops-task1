@@ -39,12 +39,20 @@ processing process. One working connection can process up to 1024 requests of th
 # Nginx configuration items and architecture
 
 ## Important configuration items
-- worker_processes - the number of worker processes that the server will use. The number must match the number of processor cores.
-- worker_connections is the maximum number of connections for each worker process. The higher the indicator, the more people are served at the same time.
-- access_log & error_log - These files are used to log any error and access attempts. The logs are examined for troubleshooting and abnormal shutdowns.
-- gzip are settings for 'compressing' Nginx requests. Enabling this setting will improve performance. By default, customizations are commented out.
-- gzip_comp_level - compression level from 1 to 10. This figure usually does not exceed 6.
-_ gzip_types is a list of response types to which compression is applied.
+
+nginx consists of modules that are configured with directives specified in the configuration file. 
+Directives are divided into simple and block directives. A simple directive consists of a name and 
+parameters, separated by spaces, and ends with a semicolon (;). A block directive has the same 
+structure as a simple directive, but instead of a semicolon after the name and parameters, there 
+is a set of additional instructions placed inside curly braces ({and}). If other directives can be 
+specified for a block directive inside curly braces, then it is called a context 
+(examples: events, http, server and location).
+
+Directives placed in the configuration file outside of any context are considered to be in the main
+context. The events and http directives are located in the main context, server in http, and 
+location in server.
+
+The part of the line after the # symbol is considered a comment.
 
 
 ## Nginx architecture
