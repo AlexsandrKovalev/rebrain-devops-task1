@@ -62,6 +62,26 @@ context. The events and http directives are located in the main context, server 
 location in server.
 
 The part of the line after the # symbol is considered a comment.
+
+| Command | Description |
+| --- | --- |
+| `user` | List all *new or modified* files |
+| `worker_processes` | Show file differences that **haven't been** staged |
+| `error_log` | List all *new or modified* files |
+| `pid` | Show file differences that **haven't been** staged |
+| `events` | List all *new or modified* files |
+| `worker_connections` | Show file differences that **haven't been** staged |
+| `http {...}` | List all *new or modified* files |
+| `log_format` | Show file differences that **haven't been** staged |
+| `access_log` | List all *new or modified* files |
+| `default_type` | Show file differences that **haven't been** staged |
+| `include` | List all *new or modified* files |
+| `server {...}` | Show file differences that **haven't been** staged |
+| `listen` | List all *new or modified* files |
+| `server_name ` | Show file differences that **haven't been** staged |
+| `root ` | Show file differences that **haven't been** staged |
+| `location / {...} ` | Show file differences that **haven't been** staged |
+| `error_page ` | Show file differences that **haven't been** staged |
 </p>
 </details>
 <details><summary>Nginx architecture</summary>
