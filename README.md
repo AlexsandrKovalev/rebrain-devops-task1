@@ -80,9 +80,11 @@ nginx для каждой операционной системы устанав
 ## Установка на Linux
 To install nginx on Linux, packages from nginx.org can be used. This document will cover installation on Linux
 
-###### installation process:
+###### Installation process:
+<details><summary>Official Red Hat/CentOS packages</summary>
+<p>
 
-###### Official Red Hat/CentOS packages
+###### Red Hat/CentOS packages
 
 1. To add NGINX yum repository, create a file named /etc/yum.repos.d/nginx.repo and paste one of the configurations below:
 
@@ -116,9 +118,15 @@ RHEL:
 
 	`sudo servicectl enable nginx.service`
 
+</p>
+</details>
+
+<details><summary>Official Debian/Ubuntu packages</summary>
+<p>
 ###### Official Debian/Ubuntu packages
 
-###### Ubuntu:
+
+#### Ubuntu:
 
 The available NGINX Ubuntu release support is listed at this distribution page. For a mapping of Ubuntu versions to release names, please visit the Official Ubuntu Releases page.
 
@@ -178,6 +186,9 @@ you can try the lucid variant of the PPA which is the most likely to work on old
 	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C300EE8C
 	apt update
 	apt install nginx
+
+</p>
+</details>
 
 ###### Установка на FreeBSD
 На FreeBSD можно установить nginx либо из пакетов, либо с помощью системы портов. Система портов даёт большую гибкость, позволяя выбирать из широкого набора настроек. Порт скомпилирует nginx с выбранными опциями и установит.
