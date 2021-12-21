@@ -48,7 +48,17 @@ _ gzip_types is a list of response types to which compression is applied.
 
 
 ## Nginx architecture
+There are 2 algorithms for work synchronous and asynchronous. With the synchronous algorithm, a separate thread is allocated for each stage of the task and the entire operation is performed step by step, that is, the program does not proceed to the next step until it finishes the previous one. Thus, some elements of the system periodically stand idle while waiting for their turn. Hence, there are two disadvantages of such a system:
 
+- irrational use of resources,
+- limited number of operations.
+- This is how the Apache web server works, for example.
+
+The asynchronous algorithm solved the problems listed above. With an asynchronous algorithm, the code still goes through everything step by step, but the system does not have to wait for one step to complete before moving on to the next. All tasks are carried out in one thread. The program is always aware of the entire process as a whole and can proceed to the next stage when the previous one is not yet completed. Nginx works according to the asynchronous algorithm. Thanks to this approach, working with Nginx allows you to:
+
+- perform more operations,
+- work faster
+- save memory.
 
 <h4 align="center">
   <img alt="NGINX_work" src="how_work_nginx_2.png">
@@ -66,7 +76,7 @@ To install nginx on Linux, packages from nginx.org can be used. This document wi
 
 ###### Official Red Hat/CentOS packages
 
-1)To add NGINX yum repository, create a file named /etc/yum.repos.d/nginx.repo and paste one of the configurations below:
+1. To add NGINX yum repository, create a file named /etc/yum.repos.d/nginx.repo and paste one of the configurations below:
 
 CentOS:
 	[nginx]
@@ -83,6 +93,17 @@ RHEL:
 	enabled=1
 	
 > **WARNING!** Due to differences between how CentOS, RHEL, and Scientific Linux populate the $releasever variable, it is necessary to manually replace $releasever with either 5 (for 5.x) or 6 (for 6.x), depending upon your OS version.
+
+2. To install, use the command 'sudo yum install nginx'. We confirm the appeared notification.
+
+3. To start the server, use the command:
+	'sudo systemctl start nginx.service'
+
+4. You can check if the installation was successful by visiting the server's public IP address. You can find it out through the command:
+	\'ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'\'
+
+5. To make Nginx automatically start when the OS boots, enter:
+	'sudo servicectl enable nginx.service'
 
 ###### Official Debian/Ubuntu packages
 
