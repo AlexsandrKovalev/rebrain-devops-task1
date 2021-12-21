@@ -65,23 +65,22 @@ The part of the line after the # symbol is considered a comment.
 
 | Command | Description |
 | --- | --- |
-| `user` | List all *new or modified* files |
-| `worker_processes` | Show file differences that **haven't been** staged |
-| `error_log` | List all *new or modified* files |
-| `pid` | Show file differences that **haven't been** staged |
-| `events` | List all *new or modified* files |
-| `worker_connections` | Show file differences that **haven't been** staged |
-| `http {...}` | List all *new or modified* files |
-| `log_format` | Show file differences that **haven't been** staged |
-| `access_log` | List all *new or modified* files |
-| `default_type` | Show file differences that **haven't been** staged |
-| `include` | List all *new or modified* files |
-| `server {...}` | Show file differences that **haven't been** staged |
-| `listen` | List all *new or modified* files |
-| `server_name ` | Show file differences that **haven't been** staged |
-| `root ` | Show file differences that **haven't been** staged |
-| `location / {...} ` | Show file differences that **haven't been** staged |
-| `error_page ` | Show file differences that **haven't been** staged |
+| `user` | Defines _user_ and _group_ credentials used by worker processes. If _group_ is omitted, a group whose name equals that of _user_ is used. |
+| `worker_processes` | Defines the number of worker processes. |
+| `error_log` | Configures logging. Several logs can be specified on the same configuration level (1.5.2). If on the _main_ configuration level writing a log to a file is not explicitly defined, the default file will be used |
+| `pid` | Defines a _file_ that will store the process ID of the main process |
+| `events` | Provides the configuration file context in which the directives that affect connection processing are specified. |
+| `worker_connections` | Sets the maximum number of simultaneous connections that can be opened by a worker process. |
+| `http {...}` | Provides the configuration file context in which the HTTP server directives are specified. |
+| `log_format` | Specifies log format. |
+| `access_log` | Sets the path, format, and configuration for a buffered log write. Several logs can be specified on the same configuration level. Logging to syslog can be configured by specifying the _syslog_ prefix in the first parameter |
+| `include` | Includes another _file_, or files matching the specified _mask_, into configuration. Included files should consist of syntactically correct directives and blocks. |
+| `server {...}` | Sets configuration for a virtual server. There is no clear separation between IP-based (based on the IP address) and name-based (based on the “Host” request header field) virtual servers. |
+| `listen` | Sets the address and port for IP, or the path for a UNIX-domain socket on which the server will accept requests. Both address and port, or only address or only port can be specified. |
+| `server_name ` | Sets names of a virtual server |
+| `root ` | Sets the root directory for requests. For example, with the following configuration |
+| `location / {...} ` | Sets configuration depending on a request URI. |
+| `error_page ` | Defines the URI that will be shown for the specified errors. A uri value can contain variables. |
 </p>
 </details>
 <details><summary>Nginx architecture</summary>
