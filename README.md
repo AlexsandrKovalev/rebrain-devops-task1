@@ -64,7 +64,7 @@ location in server.
 The part of the line after the # symbol is considered a comment.
 </p>
 </details>
-<details><summary>**Nginx architecture**</summary>
+<details><summary>Nginx architecture</summary>
 <p>
 
 There are 2 algorithms for work synchronous and asynchronous. With the synchronous algorithm, a separate thread is allocated for each stage of the task and the entire operation is performed step by step, that is, the program does not proceed to the next step until it finishes the previous one. Thus, some elements of the system periodically stand idle while waiting for their turn. Hence, there are two disadvantages of such a system:
@@ -210,7 +210,7 @@ If you need specific functionality that is not available from packages or ports,
 </p>
 </details>
 
-3. Example nginx.conf file configuration
+# 3. Example nginx.conf file configuration
 
 Example nginx.conf file configuration you can see in [file](./nginx.conf)
 
