@@ -20,8 +20,8 @@
 ## About Nginx
 
 ###### What is nginx?
-	Nginx - is a free web and mail proxy server with non-threaded (asynchronous) architecture and open source.
-		> more information can be found on the [developer's website](https://nginx.org/). 
+Nginx - is a free web and mail proxy server with non-threaded (asynchronous) architecture and open source.
+	> more information can be found on the [developer's website](https://nginx.org/). 
 		
 ###### Supported NGINX functionality
 
@@ -31,10 +31,10 @@
 	*TCP / UDP proxy
 	
 ###### How work nginx?
-	Unlike a regular web server, Nginx does not create one thread for each request, but splits it into smaller 
-	structures of the same type, called working connections. Each such connection is processed by a separate 
-	workflow, and after execution they are merged into a single block that returns the result to the main data 
-	processing process. One working connection can process up to 1024 requests of the same type at the same time.
+Unlike a regular web server, Nginx does not create one thread for each request, but splits it into smaller 
+structures of the same type, called working connections. Each such connection is processed by a separate 
+workflow, and after execution they are merged into a single block that returns the result to the main data 
+processing process. One working connection can process up to 1024 requests of the same type at the same time.
 	
 ## Nginx configuration items and architecture
 
