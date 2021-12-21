@@ -161,14 +161,13 @@ For Ubuntu 20.04 and newer:
 If you get an error about add-apt-repository not existing, you will want to install python-software-properties. For other Debian/Ubuntu based distributions, 
 you can try the lucid variant of the PPA which is the most likely to work on older package sets:
 
-'''
 	sudo -s
 	nginx=stable # use nginx=development for latest development version
 	echo "deb http://ppa.launchpad.net/nginx/$nginx/ubuntu lucid main" > /etc/apt/sources.list.d/nginx-$nginx-lucid.list
 	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C300EE8C
 	apt update
 	apt install nginx
-'''
+
 ###### Установка на FreeBSD
 На FreeBSD можно установить nginx либо из пакетов, либо с помощью системы портов. Система портов даёт большую гибкость, позволяя выбирать из широкого набора настроек. Порт скомпилирует nginx с выбранными опциями и установит.
 
