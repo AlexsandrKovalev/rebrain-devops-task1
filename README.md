@@ -97,13 +97,13 @@ RHEL:
 2. To install, use the command 'sudo yum install nginx'. We confirm the appeared notification.
 
 3. To start the server, use the command:
-	'sudo systemctl start nginx.service'
+'sudo systemctl start nginx.service'
 
 4. You can check if the installation was successful by visiting the server's public IP address. You can find it out through the command:
-	\'ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'\'
+\'ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'\'
 
 5. To make Nginx automatically start when the OS boots, enter:
-	'sudo servicectl enable nginx.service'
+'sudo servicectl enable nginx.service'
 
 ###### Official Debian/Ubuntu packages
 
