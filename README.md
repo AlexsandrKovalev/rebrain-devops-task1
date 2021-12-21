@@ -14,33 +14,43 @@
 2. Install Nginx
 3. Example nginx.conf file configuration
 
+<details><summary>**Information about Nginx**</summary>
+<p>
+<details><summary>**What is nginx?**</summary>
+<p>
 
-# Information about Nginx
-
-## About Nginx
-
-###### What is nginx?
 Nginx - is a free web and mail proxy server with non-threaded (asynchronous) architecture and open source.
 	> **more information can be found on the [developer's website](https://nginx.org/).** 
-		
-###### Supported NGINX functionality
+
+</p>
+</details>
+<details><summary>**Supported NGINX functionality**</summary>
+<p>
 
 * *HTTP server*
 * *Reverse proxy*
 * *Mail proxy*
 * *TCP / UDP proxy*
-	
-###### How work nginx?
+</p>
+</details>
+<details><summary>**How work nginx?**</summary>
+<p>
+
 Unlike a regular web server, Nginx does not create one thread for each request, but splits it into smaller 
 structures of the same type, called working connections. Each such connection is processed by a separate 
 workflow, and after execution they are merged into a single block that returns the result to the main data 
 processing process. One working connection can process up to 1024 requests of the same type at the same time.
-	
-# Nginx configuration items and architecture
+</p>
+</details>
+</p>
+</details>
 
-## Important configuration items
+<details><summary>**Nginx configuration items and architecture**</summary>
+<p>
+<details><summary>**Important configuration items**</summary>
+<p>
 
-nginx consists of modules that are configured with directives specified in the configuration file. 
+**Nginx** consists of modules that are configured with directives specified in the configuration file. 
 Directives are divided into simple and block directives. A simple directive consists of a name and 
 parameters, separated by spaces, and ends with a semicolon (;). A block directive has the same 
 structure as a simple directive, but instead of a semicolon after the name and parameters, there 
@@ -53,9 +63,11 @@ context. The events and http directives are located in the main context, server 
 location in server.
 
 The part of the line after the # symbol is considered a comment.
+</p>
+</details>
+<details><summary>**Nginx architecture**</summary>
+<p>
 
-
-## Nginx architecture
 There are 2 algorithms for work synchronous and asynchronous. With the synchronous algorithm, a separate thread is allocated for each stage of the task and the entire operation is performed step by step, that is, the program does not proceed to the next step until it finishes the previous one. Thus, some elements of the system periodically stand idle while waiting for their turn. Hence, there are two disadvantages of such a system:
 
 - irrational use of resources,
@@ -71,13 +83,14 @@ The asynchronous algorithm solved the problems listed above. With an asynchronou
 <h4 align="center">
   <img alt="NGINX_work" src="how_work_nginx_2.png">
 </h4>
+</p>
+</details>
+</p>
+</details>
 
 # 2. Install Nginx
 
-## Установка nginx
-nginx для каждой операционной системы устанавливается по разному.
-
-## Установка на Linux
+## Install nginx on Linux
 To install nginx on Linux, packages from nginx.org can be used. This document will cover installation on Linux
 
 ###### Installation process:
