@@ -67,13 +67,15 @@ To install nginx on Linux, packages from nginx.org can be used. This document wi
 ###### Official Red Hat/CentOS packages
 
 1)To add NGINX yum repository, create a file named /etc/yum.repos.d/nginx.repo and paste one of the configurations below:
-  CentOS:
+
+CentOS:
 	[nginx]
 	name=nginx repo
 	baseurl=https://nginx.org/packages/centos/$releasever/$basearch/
 	gpgcheck=0
 	enabled=1
-  RHEL:  
+	
+RHEL:  
 	[nginx]
 	name=nginx repo
 	baseurl=https://nginx.org/packages/rhel/$releasever/$basearch/
@@ -84,16 +86,68 @@ To install nginx on Linux, packages from nginx.org can be used. This document wi
 
 ###### Official Debian/Ubuntu packages
 
-Ubuntu:
+###### Ubuntu:
 
 The available NGINX Ubuntu release support is listed at this distribution page. For a mapping of Ubuntu versions to release names, please visit the Official Ubuntu Releases page.
 
 Append the appropriate stanza to /etc/apt/sources.list. If there is concern about persistence of repository additions (i.e. DigitalOcean Droplets), the appropriate stanza may instead be added to a different list file under /etc/apt/sources.list.d/, such as /etc/apt/sources.list.d/nginx.list.
 
-	##Replace $release with your corresponding Ubuntu release.
+	## Replace $release with your corresponding Ubuntu release.
 	deb https://nginx.org/packages/ubuntu/ $release nginx
 	deb-src https://nginx.org/packages/ubuntu/ $release nginx
 
+e.g. Ubuntu 20.04 (Focal Fossa):
+
+	deb https://nginx.org/packages/ubuntu/ focal nginx
+	deb-src https://nginx.org/packages/ubuntu/ focal nginx
+
+To install the packages, execute in your shell:
+
+	sudo apt update
+	sudo apt install nginx
+
+If a W: GPG error: https://nginx.org/packages/ubuntu focal InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY $key is encountered during the NGINX repository update, execute the following:
+
+	## Replace $key with the corresponding $key from your GPG error.
+	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $key
+	sudo apt update
+	sudo apt install nginx
+
+You have now nginx installed on your server but not ready to serve web pages. you have to start the nginx. You can do this by using this command:
+
+	sudo systemctl start nginx
+
+###### Debian 6:
+
+Append the appropriate stanza to /etc/apt/sources.list.
+
+	deb https://nginx.org/packages/debian/ squeeze nginx
+	deb-src https://nginx.org/packages/debian/ squeeze nginx
+
+###### Ubuntu PPA
+This PPA is maintained by volunteers and is not distributed by nginx.org. It has some additional compiled-in modules and may be more fitting for your environment.
+
+You can get the latest stable version of NGINX from the NGINX PPA on Launchpad: You will need to have root privileges to perform the following commands.
+
+For Ubuntu 20.04 and newer:
+
+	sudo -s
+	nginx=stable # use nginx=development for latest development version
+	add-apt-repository ppa:nginx/$nginx
+	apt update
+	apt install nginx
+
+If you get an error about add-apt-repository not existing, you will want to install python-software-properties. For other Debian/Ubuntu based distributions, 
+you can try the lucid variant of the PPA which is the most likely to work on older package sets:
+
+	'''
+	sudo -s
+	nginx=stable # use nginx=development for latest development version
+	echo "deb http://ppa.launchpad.net/nginx/$nginx/ubuntu lucid main" > /etc/apt/sources.list.d/nginx-$nginx-lucid.list
+	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C300EE8C
+	apt update
+	apt install nginx
+	'''
 ###### Установка на FreeBSD
 На FreeBSD можно установить nginx либо из пакетов, либо с помощью системы портов. Система портов даёт большую гибкость, позволяя выбирать из широкого набора настроек. Порт скомпилирует nginx с выбранными опциями и установит.
 
