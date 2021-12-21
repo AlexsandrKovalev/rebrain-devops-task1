@@ -123,8 +123,6 @@ RHEL:
 
 <details><summary>Official Debian/Ubuntu packages</summary>
 <p>
-###### Official Debian/Ubuntu packages
-
 
 #### Ubuntu:
 
@@ -189,12 +187,18 @@ you can try the lucid variant of the PPA which is the most likely to work on old
 
 </p>
 </details>
+<details><summary>Installing on FreeBSD</summary>
+<p>
+On FreeBSD, you can install nginx either from packages or using the ports system. The port system gives you a lot of flexibility, allowing you to choose 
+from a wide range of settings. The port will compile nginx with the selected options and install.
+</p>
+</details>
 
-###### Установка на FreeBSD
-На FreeBSD можно установить nginx либо из пакетов, либо с помощью системы портов. Система портов даёт большую гибкость, позволяя выбирать из широкого набора настроек. Порт скомпилирует nginx с выбранными опциями и установит.
-
-###### Сборка из исходных файлов
-Если необходима специфическая функциональность, недоступная из пакетов или портов, можно скомпилировать nginx из исходного кода. Будучи наиболее гибким, этот подход может быть сложным для начинающего. Сборка nginx из исходных файлов освещает этот вопрос более подробно.
+<details><summary>Building from source files</summary>
+<p>
+If you need specific functionality that is not available from packages or ports, you can compile nginx from source. While most flexible, this approach can be tricky for a beginner. Building nginx from source covers this issue in more detail.
+</p>
+</details>
 
 3. Example nginx.conf file configuration
 
