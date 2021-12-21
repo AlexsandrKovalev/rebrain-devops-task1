@@ -56,13 +56,13 @@ _ gzip_types is a list of response types to which compression is applied.
 
 # 2. Install Nginx
 
-##Установка nginx
+## Установка nginx
 nginx для каждой операционной системы устанавливается по разному.
 
-##Установка на Linux
+## Установка на Linux
 Для установки nginx на Linux могут быть использованы пакеты с nginx.org. This document will cover installation on Linux
 
-######installation process:
+###### installation process:
 Official Red Hat/CentOS packages
 1)To add NGINX yum repository, create a file named /etc/yum.repos.d/nginx.repo and paste one of the configurations below:
   CentOS:
@@ -80,8 +80,8 @@ Official Red Hat/CentOS packages
 	
 > **WARNING!** Due to differences between how CentOS, RHEL, and Scientific Linux populate the $releasever variable, it is necessary to manually replace $releasever with either 5 (for 5.x) or 6 (for 6.x), depending upon your OS version.
 
-######Установка на FreeBSD
+###### Установка на FreeBSD
 На FreeBSD можно установить nginx либо из пакетов, либо с помощью системы портов. Система портов даёт большую гибкость, позволяя выбирать из широкого набора настроек. Порт скомпилирует nginx с выбранными опциями и установит.
 
-######Сборка из исходных файлов
+###### Сборка из исходных файлов
 Если необходима специфическая функциональность, недоступная из пакетов или портов, можно скомпилировать nginx из исходного кода. Будучи наиболее гибким, этот подход может быть сложным для начинающего. Сборка nginx из исходных файлов освещает этот вопрос более подробно.
